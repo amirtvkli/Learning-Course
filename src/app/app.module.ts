@@ -7,7 +7,7 @@ import { BrowserXhr, HttpModule } from '@angular/http';
 
 
 //Pages
-import {HomePage} from './pages/index';
+import {HomePage, CoursePage} from './pages/index';
 
 //Components
 import { NavComponent,FooterComponent } from './components/index';
@@ -19,7 +19,12 @@ import {AppRouting} from './app.routes';
 @NgModule({
   declarations: [
     AppComponent,
+
+    //pages
     HomePage,
+    CoursePage,
+
+    //components
     NavComponent,
     FooterComponent
   ],
