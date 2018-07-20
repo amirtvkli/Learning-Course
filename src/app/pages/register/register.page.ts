@@ -8,8 +8,7 @@ import { ActivatedRoute, Params } from '@angular/router';
     
 })
 export class RegisterPage{
-    courseId;
-    user={firstName:'',lastName:'',nationalCode:'',birthDate:'',sex:'',educationField:'',mobilePhone:'',email:'',rulesCheck:false}
+    user={courseId:'',firstName:'',lastName:'',nationalCode:'',birthDate:'',sex:'',educationField:'',mobilePhone:'',email:'',rulesCheck:false}
     //banner= require("assets/images/banner.jpg");
     
     constructor(private router:ActivatedRoute){
@@ -17,9 +16,7 @@ export class RegisterPage{
     }
     ngOnInit() {
         this.router.params.subscribe((params: Params) => { 
-            this.courseId=params.courseId;
-            console.log(this.courseId);
-            
+            this.user.courseId=params.courseId;
         })
     }
     onSubmit(){

@@ -17,6 +17,9 @@ import { NavComponent,FooterComponent } from './components/index';
 //Routes
 import {AppRouting} from './app.routes';
 
+//Services
+import { RegisterService } from './_services/index';
+
 
 @NgModule({
   declarations: [
@@ -40,6 +43,7 @@ import {AppRouting} from './app.routes';
     ReactiveFormsModule
   ],
   providers: [
+    RegisterService,
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]
