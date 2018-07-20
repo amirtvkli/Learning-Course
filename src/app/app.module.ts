@@ -3,11 +3,12 @@ import {  HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/Forms';
 import { BrowserXhr, HttpModule } from '@angular/http';
 
 
 //Pages
-import {HomePage, CoursePage} from './pages/index';
+import {HomePage, CoursePage, RegisterPage} from './pages/index';
 
 //Components
 import { NavComponent,FooterComponent } from './components/index';
@@ -16,6 +17,7 @@ import { NavComponent,FooterComponent } from './components/index';
 //Routes
 import {AppRouting} from './app.routes';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +25,8 @@ import {AppRouting} from './app.routes';
     //pages
     HomePage,
     CoursePage,
+    RegisterPage,
+
 
     //components
     NavComponent,
@@ -31,7 +35,9 @@ import {AppRouting} from './app.routes';
   imports: [
     HttpModule,
     BrowserModule,
-    AppRouting
+    AppRouting,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy }
