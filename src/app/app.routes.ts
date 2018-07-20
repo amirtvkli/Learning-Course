@@ -4,9 +4,8 @@ import {HomePage} from './pages/index';
 
 const routes: Routes = [
     {
-        path: '', redirectTo: '/home',pathMatch: 'full'},
-        { path: 'home', component: HomePage },
-        { path: '**', component: HomePage }
+        path: '', component: HomePage}
+        // { path: 'home', component: HomePage }
     ];
     
-    export const AppRouting = RouterModule.forRoot(routes);
+    export const AppRouting = RouterModule.forRoot(routes, { useHash: false });

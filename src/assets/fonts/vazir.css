@@ -1,0 +1,53 @@
+
+@font-face {
+    font-family: Vazir;
+    src: url('vazir/Vazir.eot');
+    src: url('vazir/Vazir.eot?#iefix') format('embedded-opentype'),
+         url('vazir/Vazir.woff') format('woff'),
+         url('vazir/Vazir.ttf') format('truetype');
+    font-weight: normal;
+  }
+        
+  @font-face {
+    font-family: Vazir;
+    src: url('vazir/Vazir-Bold.eot');
+    src: url('vazir/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
+         url('vazir/Vazir-Bold.woff') format('woff'),
+         url('vazir/Vazir-Bold.ttf') format('truetype');
+    font-weight: bold;
+  }
+  
+  @font-face {
+    font-family: Vazir;
+    src: url('vazir/Vazir-Light.eot');
+    src: url('vazir/Vazir-Light.eot?#iefix') format('embedded-opentype'),
+         url('vazir/Vazir-Light.woff') format('woff'),
+         url('vazir/Vazir-Light.ttf') format('truetype');
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: Vazir-FD;
+    src: url('vazir/Farsi-Digits/Vazir-FD.eot');
+    src: url('vazir/Farsi-Digits/Vazir-FD.eot?#iefix') format('embedded-opentype'),
+         url('vazir/Farsi-Digits/Vazir-FD.woff') format('woff'),
+         url('vazir/Farsi-Digits/Vazir-FD.ttf') format('truetype');
+    font-weight: normal;
+  }
+        
+  @font-face {
+    font-family: Vazir-Fa;
+    src: url('vazir/Farsi-Digits/Vazir-Bold-FD.eot');
+    src: url('vazir/Farsi-Digits/Vazir-Bold-FD.eot?#iefix') format('embedded-opentype'),
+         url('vazir/Farsi-Digits/Vazir-Bold-FD.woff') format('woff'),
+         url('vazir/Farsi-Digits/Vazir-Bold.ttf') format('truetype');
+    font-weight: bold;
+  }
+  
+  @font-face {
+    font-family: Vazir-Fa;
+    src: url('vazir/Farsi-Digits/Vazir-Light-FD.eot');
+    src: url('vazir/Farsi-Digits/Vazir-Light-FD.eot?#iefix') format('embedded-opentype'),
+         url('vazir/Farsi-Digits/Vazir-Light-FD.woff') format('woff'),
+         url('vazirFarsi-Digits/Vazir-Light-FD.ttf') format('truetype');
+    font-weight: 300;
+  }
