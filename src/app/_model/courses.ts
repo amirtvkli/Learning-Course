@@ -73,7 +73,7 @@ export class Course {
 "startDate":"یک شنبه ۱۴ مردادماه ۹۷",
 "capacity":"10",
 "price":"317000",
-"length":"20",
+"length":"21",
 "dates":"روزهای یکشنبه و چهارشنبه از ساعت ۱۸:۳۰ تا ۲۰:۰۰",
 "place":"خیابان دهخدا، شرکت کاما",
 "thumbnail": ""
@@ -97,7 +97,7 @@ export class Course {
 "startDate":"یک شنبه ۱۴ مردادماه ۹۷",
 "capacity":"10",
 "price":"316000",
-"length":"20",
+"length":"21",
 "dates":"روزهای یکشنبه و چهارشنبه از ساعت ۱۶:۳۰ تا ۱۸:۰۰",
 "place":"خیابان دهخدا، شرکت کاما",
 "thumbnail": ""
