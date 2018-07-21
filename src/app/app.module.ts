@@ -7,7 +7,7 @@ import { BrowserXhr, HttpModule } from '@angular/http';
 
 
 // Pages
-import {HomePage, RegisterPage} from './pages/index';
+import {HomePage, RegisterPage, RulesPage} from './pages/index';
 
 // Components
 import { NavComponent, FooterComponent, CourseListComponent, CourseViewComponent} from './components/index';
@@ -33,17 +33,16 @@ import { PricePipe, CapacityPipe } from './_pipes';
     PricePipe,
     CapacityPipe,
     
-   
-    
     //components
     NavComponent,
     FooterComponent,
     CourseListComponent,
     CourseViewComponent,
-
-     //pages
-     HomePage,
-     RegisterPage
+    
+    //pages
+    HomePage,
+    RegisterPage,
+    RulesPage
   ],
   imports: [
     HttpModule,
