@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 
 @Component({
     selector : 'register',

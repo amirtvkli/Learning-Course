@@ -1,0 +1,44 @@
+<main role="main" >
+  <div class="row">
+    <div class="col-md-7 container">
+      <div class="row">
+        <h2 >{{currentCourse.title}}</h2>
+      </div>
+      
+      <div class="row" style="text-align: justify;">
+        {{currentCourse.description}}
+      </div>
+      <div class="row">
+        <h5>محتوای دوره:</h5>
+        <ul>
+          <li *ngFor="let item of currentCourse.material">{{item}}</li>
+        </ul>
+      </div>
+      <div class="row">
+        <span style="margin-top: 30px;">
+      <a style="color:rgb(0, 157, 255); margin-left: 10px;"><strong>برای ثبت‌نام فرم زیر را تکمیل نمایید.</strong></a>
+   |
+      <a routerLink="../.." style="color:rgb(153, 153, 153); margin-right: 10px;"> <strong>بازگشت به صفحه قبل</strong></a>
+    </span>
+      </div>
+    </div><!-- /.blog-main -->
+    
+    <aside class="col-md-5">
+      <img src={{banner}} alt="course" width="100%;" style="margin-bottom:25px;"> 
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">مدرس دوره: {{currentCourse.teacher}}</li>
+        <li class="list-group-item">هزینه دوره: {{currentCourse.price | price}}</li>
+        <li class="list-group-item">مدت دوره: {{currentCourse.length}} ساعت</li>
+        <li class="list-group-item">زمان برگزاری: {{currentCourse.dates}} </li>
+        <li class="list-group-item">شروع دوره: {{currentCourse.startDate}} </li>
+        <li class="list-group-item">محل برگزاری: {{currentCourse.place}}</li>
+        <li class="list-group-item">ظرفیت باقیمانده: {{currentCourse.capacity | capacity}}</li>
+        
+      </ul>
+      
+      
+    </aside><!-- /.blog-sidebar -->
+    
+  </div><!-- /.row -->
+  
+</main><!-- /.container -->
