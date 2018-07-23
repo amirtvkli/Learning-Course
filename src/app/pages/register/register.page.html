@@ -21,7 +21,7 @@
             <div class="col-md-6">
                 <label for="birthDate">تاریخ تولد</label>
                 <div class="ui icon input">
-                    <input type="text" name="birthDate" (click)="d.toggle()" id="birthDate" [(ngModel)]="user.birthDate" class="form-control" placeholder="تاریخ تولد خود را وارد کنید" [firstDayOfWeek]="6"  [startDate]="{year: 1376, month: 9}" [minDate]="{year: 1358, month: 1}" [maxDate]="{year: 1386, month: 12}" [markDisabled]="isDisabled"  ngbDatepicker #d="ngbDatepicker">
+                    <input type="text" name="birthDate" (click)="d.toggle()" id="birthDate" [(ngModel)]="user.birthDate" class="form-control" placeholder="تاریخ تولد خود را وارد کنید" [firstDayOfWeek]="6"   [minDate]="{year: 1358, month: 1}"   ngbDatepicker #d="ngbDatepicker">
                     <img class="icon"  src={{calendarIcon}} style="width: 1.2rem; height: 1rem; "/>
                 </div>
             </div>
@@ -45,7 +45,7 @@
         <div class="row">
             <div class="col-md-6">
                 <label for="mobilePhone">تلفن همراه</label>
-                <input type="number" id="mobilePhone" name="mobilePhone" [(ngModel)]="user.mobilePhone" class="form-control" placeholder="شماره تلفن همراه خود را وارد کنید">
+                <input type="tel" id="mobilePhone" name="mobilePhone" [(ngModel)]="user.mobilePhone" class="form-control" placeholder="شماره تلفن همراه خود را وارد کنید">
             </div>
             <div class="col-md-6">
                 <label for="email">ایمیل</label>
