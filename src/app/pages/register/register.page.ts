@@ -1,6 +1,8 @@
 import {Component} from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
+declare var require: any
+
 
 @Component({
     selector : 'register',
@@ -9,7 +11,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms'
     
 })
 export class RegisterPage{
-    user={courseId:'',firstName:'',lastName:'',nationalCode:'',birthDate:'',sex:'',educationField:'',mobilePhone:'',email:'',rulesCheck:false}
+    calendarIcon= require("assets/images/calendar-icon.svg");
+
+    user={courseId:'',firstName:'',lastName:'',nationalCode:'',birthDate:'1370-01-01',sex:'',educationField:'',mobilePhone:'',email:'',rulesCheck:false}
     //banner= require("assets/images/banner.jpg");
     
     constructor(private router:ActivatedRoute){

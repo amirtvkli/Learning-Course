@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserXhr, HttpModule } from '@angular/http';
 
+// Import NgbModule library
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 // Pages
 import {HomePage, RegisterPage, RulesPage} from './pages/index';
@@ -49,7 +51,8 @@ import { PricePipe, CapacityPipe } from './_pipes';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRouting
+    AppRouting,
+    NgbModule.forRoot()
   ],
   providers: [
     

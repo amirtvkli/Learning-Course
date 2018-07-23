@@ -20,7 +20,10 @@
             </div>
             <div class="col-md-6">
                 <label for="birthDate">تاریخ تولد</label>
-                <input type="text" name="birthDate" id="birthDate" [(ngModel)]="user.birthDate" class="form-control" placeholder="تاریخ تولد خود را وارد کنید">
+                <div class="ui icon input">
+                    <input type="text" name="birthDate" (click)="d.toggle()" id="birthDate" [(ngModel)]="user.birthDate" class="form-control" placeholder="تاریخ تولد خود را وارد کنید" [firstDayOfWeek]="6"  [startDate]="{year: 1376, month: 9}" [minDate]="{year: 1358, month: 1}" [maxDate]="{year: 1386, month: 12}" [markDisabled]="isDisabled"  ngbDatepicker #d="ngbDatepicker">
+                    <img class="icon"  src={{calendarIcon}} style="width: 1.2rem; height: 1rem; "/>
+                </div>
             </div>
         </div>
         <div class="row">
@@ -61,9 +64,9 @@
         <div class="row justify-content-center">
             <div class="col-md-1">
                 <button class="btn btn-primary" type="submit" id="submit" (click)="onSubmit()" [disabled]="!user.rulesCheck">
-                        ثبت و پرداخت
+                    ثبت و پرداخت
                 </button>
-               
+                
             </div>
         </div>
     </div>
