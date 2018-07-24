@@ -1,0 +1,27 @@
+.form-group .row{
+    margin-bottom: 2rem;
+}
+.form-group{
+    margin-top:3rem;
+
+}
+form{
+    margin-bottom: 2rem;
+}
+.input-group-text{
+    background-color: transparent;
+}
+
+.ui.input {
+    position:relative;
+}
+.ui.input input{
+    margin:0;
+    width: 100%;
+}
+
+.ui.icon.input>.icon {
+    position:absolute;
+    top:9px;
+    left:10px;
+}
