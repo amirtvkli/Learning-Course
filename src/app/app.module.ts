@@ -16,13 +16,13 @@ import { NavComponent, FooterComponent, CourseListComponent, CourseViewComponent
 import {AppRouting} from './app.routes';
 
 // Services
-import { RegisterService } from './_services/index';
+import { RegisterService,CoursesService } from './_services/index';
 
 // Models
 import { Course } from './_model';
 
 // Pipes
-import { PricePipe, CapacityPipe } from './_pipes';
+import { PricePipe, CapacityPipe, GregorianToJalali } from './_pipes';
 
 
 @NgModule({
@@ -32,6 +32,7 @@ import { PricePipe, CapacityPipe } from './_pipes';
     //pipes
     PricePipe,
     CapacityPipe,
+    GregorianToJalali,
     
     //components
     NavComponent,
@@ -58,6 +59,7 @@ import { PricePipe, CapacityPipe } from './_pipes';
     
     //services
     RegisterService,
+    CoursesService,
     
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
