@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import { AuthService } from '../../_services/auth.service';
 declare var require: any
 
 @Component({
@@ -8,5 +9,10 @@ styleUrls: ['./nav.component.scss']
 })
 
 export class NavComponent{
+constructor(private auth:AuthService){}
     logo= require("assets/images/logo-text.png");
+
+    logOut(){
+        this.auth.logout();
+    }
 }

@@ -1,12 +1,10 @@
 import { Injectable } from "@angular/core";
 import { Http } from "@angular/http";
-import {Subject} from 'rxjs/Rx'
+import { Subject } from 'rxjs/Rx'
+import { AppConfig } from "../_config/app.config";
 
 @Injectable()
 export class CoursesService{
-    url : string="http://neshanekhane.ir:2029/registration"
-
-
      //Logos List
      private courseStore=[];
      private courseSubject=new Subject();
@@ -16,7 +14,7 @@ export class CoursesService{
     constructor(private http:Http){}
     GetCourses()
     {
-        return this.http.get(this.url + "/getcourses")
+        return this.http.get(AppConfig.BASE_URL + "/registration/getcourses")
         .subscribe( res => {
             this.courseStore = res.json();
             this.courseSubject.next(this.courseStore);
