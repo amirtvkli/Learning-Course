@@ -27,12 +27,12 @@ export class AuthService {
                 res => {
                     this.authentication(res);
                 },
-                error => {
-                    console.log('login error');
+                err => {
+                    console.log('login error'+err);
                 }
             );
         } catch (error) {
-            console.log('login serious error');
+            console.log('login serious error'+error);
         }
         
     }

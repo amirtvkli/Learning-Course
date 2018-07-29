@@ -1,7 +1,20 @@
+.card{
+    padding: 25px;
+    margin: 20px auto;
+}
+.header{
+    width: 100%;
+    text-align: center;
+    margin: 20px 0px;
+}
 .form-group{
     margin-top:1em;
 }
 button{
     margin-top: 0.5em;
     width: 100%;
+}
+:host{
+    flex: 1;
+    line-height: 2.5;
 }
