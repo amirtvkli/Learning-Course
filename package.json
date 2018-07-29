@@ -26,6 +26,7 @@
     "jquery": "^3.3.1",
     "ng2-datepicker-jalali": "^1.0.9",
     "ngx-progressbar": "^2.1.1",
+    "ngx-snackbar": "^1.2.0-rc.2",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.19"
   },

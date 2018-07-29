@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http,Headers,RequestOptions } from '@angular/http';
 import { AppConfig } from '../_config/app.config';
 import { Router } from '@angular/router';
+import { SnackbarService } from 'ngx-snackbar';
 
 @Injectable()
 export class AuthService {
@@ -9,7 +10,7 @@ export class AuthService {
     BASE_URL = AppConfig.BASE_URL;
     TOKEN_KEY=AppConfig.TOKEN_KEY;
     
-    constructor(private http:Http,private router:Router) { }
+    constructor(private http:Http,private router:Router,private snackbar:SnackbarService) { }
     
     get isAuthenticated() {
         return !!localStorage.getItem(this.TOKEN_KEY);
@@ -28,11 +29,43 @@ export class AuthService {
                     this.authentication(res);
                 },
                 err => {
-                    console.log('login error'+err);
+                    this.snackbar.add({
+                        msg: 'نام کاربری یا گذرواژه اشتباه است.',
+                        background: '#c70000',
+                        color: '#fff',
+                        timeout: 3000 ,
+                        action: {
+                          text: '',
+                          onClick: (snack) => {
+                            console.log('dismissed: ' + snack.id);
+                          },
+                        },
+                        onAdd: (snack) => {
+                          console.log('added: ' + snack.id);
+                        },
+                        onRemove: (snack) => {
+                          console.log('removed: ' + snack.id);
+                        }
+                    })
                 }
             );
         } catch (error) {
-            console.log('login serious error'+error);
+            this.snackbar.add({
+                msg: 'خطایی رخ داده است.',
+                timeout: 3000 ,
+                action: {
+                  text: '',
+                  onClick: (snack) => {
+                    console.log('dismissed: ' + snack.id);
+                  },
+                },
+                onAdd: (snack) => {
+                  console.log('added: ' + snack.id);
+                },
+                onRemove: (snack) => {
+                  console.log('removed: ' + snack.id);
+                }
+            })
         }
         
     }
@@ -47,6 +80,25 @@ export class AuthService {
         else {
             localStorage.setItem(this.TOKEN_KEY, authResponse.token);
             this.router.navigate(['/']);
+            this.snackbar.add({
+                msg: 'شما به پنل کاربری خود وارد شدید.',
+                background: '#00a40c',
+                color: '#fff',
+                timeout: 5000
+                // ,
+                // action: {
+                //   text: 'Undo',
+                //   onClick: (snack) => {
+                //     console.log('dismissed: ' + snack.id);
+                //   },
+                // },
+                // onAdd: (snack) => {
+                //   console.log('added: ' + snack.id);
+                // },
+                // onRemove: (snack) => {
+                //   console.log('removed: ' + snack.id);
+                // }
+              });
         }
     }
 }

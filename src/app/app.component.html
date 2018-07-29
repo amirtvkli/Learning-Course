@@ -1,8 +1,14 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<ng-progress [positionUsing]="'marginLeft'"
+<ng-progress [positionUsing]="'translate'" [minimum]="0.15" [maximum]="1" [speed]="200"
               [showSpinner]="true" [direction]="'leftToRightIncreased'"
              [color]="'orange'" [thick]="true" [ease]="'linear'"
 ></ng-progress>
+<ngx-snackbar
+  [position]="'bottom-right'"
+  [max]="3"
+  [timeout]="50000"
+  [background]="'#343434'"
+  [accent]="'#2196f3'"></ngx-snackbar>
 <div class="container">
 <nav></nav>
 <router-outlet></router-outlet>

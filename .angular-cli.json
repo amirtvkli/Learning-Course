@@ -20,8 +20,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "sass/styles.scss"
-       
+        "sass/styles.scss",
+        "../node_modules/ngx-snackbar/bundles/style.css"
       ],
       "scripts": [
        

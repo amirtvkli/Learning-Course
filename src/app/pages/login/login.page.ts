@@ -15,5 +15,6 @@ export class LoginPage implements OnInit {
 
     onSubmit(){
        this.auth.login(this.data);
+      
     }
 }

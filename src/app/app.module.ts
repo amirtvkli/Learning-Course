@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserXhr, HttpModule } from '@angular/http';
 import { NgProgressModule, NgProgressBrowserXhr } from 'ngx-progressbar';
+import {SnackbarModule} from 'ngx-snackbar';
 
 // Import NgbModule library
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -60,7 +61,8 @@ import { AuthService } from './_services/auth.service';
     AppRouting,
     // progress bar
     NgProgressModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    SnackbarModule.forRoot()
   ],
   providers: [
     //models
