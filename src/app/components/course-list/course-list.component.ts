@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Course} from '../../_model/index';
-import { CoursesService } from '../../_services';
+import { CoursesService } from '../../_services/courses.service';
 @Component({
     selector:'course-list',
     templateUrl:'./course-list.component.html',

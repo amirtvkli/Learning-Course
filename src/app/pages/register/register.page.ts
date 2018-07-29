@@ -3,7 +3,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 declare var require: any
 import * as moment from 'jalali-moment';
-import { RegisterService } from '../../_services';
+import { RegisterService } from '../../_services/register.service';
 
 @Component({
     selector : 'register',

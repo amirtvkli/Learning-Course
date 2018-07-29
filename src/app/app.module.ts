@@ -19,7 +19,6 @@ import { NavComponent, FooterComponent, CourseListComponent, CourseViewComponent
 import {AppRouting} from './app.routes';
 
 // Services
-import { RegisterService,CoursesService } from './_services/index';
 
 // Models
 import { Course } from './_model';
@@ -27,6 +26,9 @@ import { Course } from './_model';
 // Pipes
 import { PricePipe, CapacityPipe, GregorianToJalali } from './_pipes';
 import { LoginPage } from './pages/login/login.page';
+import { RegisterService } from './_services/register.service';
+import { CoursesService } from './_services/courses.service';
+import { AuthService } from './_services/auth.service';
 
 
 @NgModule({
@@ -61,13 +63,14 @@ import { LoginPage } from './pages/login/login.page';
     NgbModule.forRoot()
   ],
   providers: [
-    
     //models
     Course,
     
     //services
     RegisterService,
     CoursesService,
+    AuthService,
+
     // progress bar
     { provide: BrowserXhr, useClass: NgProgressBrowserXhr },
     { provide: LocationStrategy, useClass: HashLocationStrategy }
