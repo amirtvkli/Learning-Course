@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserXhr, HttpModule } from '@angular/http';
+import { NgProgressModule, NgProgressBrowserXhr } from 'ngx-progressbar';
 
 // Import NgbModule library
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -18,13 +19,14 @@ import { NavComponent, FooterComponent, CourseListComponent, CourseViewComponent
 import {AppRouting} from './app.routes';
 
 // Services
-import { RegisterService } from './_services/index';
+import { RegisterService,CoursesService } from './_services/index';
 
 // Models
 import { Course } from './_model';
 
 // Pipes
-import { PricePipe, CapacityPipe } from './_pipes';
+import { PricePipe, CapacityPipe, GregorianToJalali } from './_pipes';
+import { LoginPage } from './pages/login/login.page';
 
 
 @NgModule({
@@ -34,6 +36,7 @@ import { PricePipe, CapacityPipe } from './_pipes';
     //pipes
     PricePipe,
     CapacityPipe,
+    GregorianToJalali,
     
     //components
     NavComponent,
@@ -44,7 +47,8 @@ import { PricePipe, CapacityPipe } from './_pipes';
     //pages
     HomePage,
     RegisterPage,
-    RulesPage
+    RulesPage,
+    LoginPage
   ],
   imports: [
     HttpModule,
@@ -52,6 +56,8 @@ import { PricePipe, CapacityPipe } from './_pipes';
     FormsModule,
     ReactiveFormsModule,
     AppRouting,
+    // progress bar
+    NgProgressModule,
     NgbModule.forRoot()
   ],
   providers: [
@@ -61,7 +67,9 @@ import { PricePipe, CapacityPipe } from './_pipes';
     
     //services
     RegisterService,
-    
+    CoursesService,
+    // progress bar
+    { provide: BrowserXhr, useClass: NgProgressBrowserXhr },
     { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]

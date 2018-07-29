@@ -1,6 +1,6 @@
 <table class="table">
     <caption>برای دریافت مشاوره قبل از ثبت نام یا برای ثبت نام حضوری به دفتر شرکت مراجعه نمایید.</caption>
-    <thead>
+    <thead >
         <tr>
             <th scope="col">ردیف</th>
             <th scope="col">دوره</th>
@@ -11,14 +11,14 @@
             <th scope="col">ثبت نام</th>
         </tr>
     </thead>
-    <tbody>
-        <tr *ngFor="let course of courseList">
+    <tbody *ngIf="courses.courses">
+        <tr *ngFor="let course of courses.courses | async">
             <th scope="row">{{course.id}}</th>
             <td>{{course.title}}</td>
-            <td>{{course.startDate}}</td>
-            <td>{{course.dates}} </td>
-            <td>{{course.length}}</td>
-            <td>{{course.capacity}}</td>
+            <td>{{course.eventDate | jalali}}</td>
+            <td>{{course.classTimes}} </td>
+            <td>{{course.duration}}</td>
+            <td>{{10-course.capacity}}</td>
             <td><button  [className]="course.capacity>0 ? 'btn btn-primary' : 'btn'" routerLink='/register/{{course.id}}' [disabled]="course.capacity==0">ثبت نام</button></td>
         </tr>
     </tbody>
