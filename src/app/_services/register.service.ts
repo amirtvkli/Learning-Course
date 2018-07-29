@@ -11,15 +11,16 @@ export class RegisterService{
     constructor(private http: Http){}
 
     register(user){
+        delete user.rulesCheck;
         try {
-            this.http.post(this.BASE_URL+'/register',user)
+            this.http.post(this.BASE_URL+'/registration/register',user)
             .subscribe(res=>{
-
+                console.log('sucess');
             },err=>{
-                
+                console.error('error happend.')
             });
         } catch (error) {
-            
+            console.error(error);
         }
     }
 }
