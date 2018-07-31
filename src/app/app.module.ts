@@ -11,10 +11,10 @@ import {SnackbarModule} from 'ngx-snackbar';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 // Pages
-import {HomePage, RegisterPage, RulesPage} from './pages/index';
+import {HomePage, CoursePage, RulesPage} from './pages';
 
 // Components
-import { NavComponent, FooterComponent, CourseListComponent, CourseViewComponent} from './components/index';
+import { NavComponent, FooterComponent, CourseListComponent, CourseViewComponent, RegisterComponent} from './components';
 
 // Routes
 import {AppRouting} from './app.routes';
@@ -46,10 +46,11 @@ import { AuthService } from './_services/auth.service';
     FooterComponent,
     CourseListComponent,
     CourseViewComponent,
+    RegisterComponent,
     
     //pages
     HomePage,
-    RegisterPage,
+    CoursePage,
     RulesPage,
     LoginPage
   ],

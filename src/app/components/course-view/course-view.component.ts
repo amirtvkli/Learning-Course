@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
 import { ActivatedRoute, Params} from '@angular/router';
 // Course Model
-import {Course} from '../../_model/index';
+import {Course} from '../../_model';
 
 // Price Pipe
-import {PricePipe,CapacityPipe} from '../../_pipes/index';
+import {PricePipe,CapacityPipe} from '../../_pipes';
 
 declare var require: any
 

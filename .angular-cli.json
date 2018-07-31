@@ -6,7 +6,7 @@
   "apps": [
     {
       "root": "src",
-      "outDir": "c://data//develop//Learning-Course (Production)",
+      "outDir": "c://data//develop//Learning-Course (Production)//dist",
       "assets": [
         "assets",
         "favicon.ico",

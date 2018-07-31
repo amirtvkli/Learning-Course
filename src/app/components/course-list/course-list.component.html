@@ -1,5 +1,5 @@
 <table class="table">
-    <caption>برای دریافت مشاوره قبل از ثبت نام یا برای ثبت نام حضوری به دفتر شرکت مراجعه نمایید.</caption>
+    <caption>در حال حاضر ثبت نام به صورت حضوری و در محل شرکت آموزشی صنعتی کاما انجام می شود.</caption>
     <thead >
         <tr>
             <th scope="col">ردیف</th>
@@ -8,7 +8,7 @@
             <th scope="col">روز و ساعت</th>
             <th scope="col">مدت(ساعت)</th>
             <th scope="col">ظرفیت باقیمانده (نفر)</th>
-            <th scope="col">ثبت نام</th>
+            <th scope="col">مشاهده</th>
         </tr>
     </thead>
     <tbody *ngIf="courses.courses">
@@ -18,8 +18,8 @@
             <td>{{course.eventDate | jalali}}</td>
             <td>{{course.classTimes}} </td>
             <td>{{course.duration}}</td>
-            <td>{{10-course.capacity}}</td>
-            <td><button  [className]="course.capacity>0 ? 'btn btn-primary' : 'btn'" routerLink='/register/{{course.id}}' [disabled]="course.capacity==0">ثبت نام</button></td>
+            <td>{{course.capacity}}</td>
+            <td><button  [className]="course.capacity>0 ? 'btn btn-primary' : 'btn'" routerLink='/course/{{course.id}}' [disabled]="course.capacity==0">مشاهده</button></td>
         </tr>
     </tbody>
 </table>

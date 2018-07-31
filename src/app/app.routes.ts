@@ -1,11 +1,11 @@
 import { RouterModule, Routes } from '@angular/router';
-import {HomePage, RegisterPage, RulesPage} from './pages/index';
+import {HomePage, CoursePage, RulesPage} from './pages';
 import { LoginPage } from './pages/login/login.page';
 
 
 const routes: Routes = [
     { path: '', component: HomePage},
-    { path:'register/:courseId',component:RegisterPage },
+    { path:'course/:courseId',component:CoursePage },
     {path:'rules',component:RulesPage},
     {path:'login',component:LoginPage}
 ];

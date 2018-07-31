@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Http } from "@angular/http";
-import { Subject } from 'rxjs/Rx'
+import { Subject } from 'rxjs'
 import { AppConfig } from "../_config/app.config";
 import { SnackbarService } from "ngx-snackbar";
 

@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Course} from '../../_model/index';
+import {Course} from '../../_model';
 import { CoursesService } from '../../_services/courses.service';
 @Component({
     selector:'course-list',
@@ -11,5 +11,4 @@ export class CourseListComponent{
     constructor(protected courses:CoursesService){
         courses.GetCourses();
     }
-   
 }

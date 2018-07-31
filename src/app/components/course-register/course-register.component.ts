@@ -1,30 +1,21 @@
-import {Component} from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms'
-declare var require: any
+import { Component, OnInit } from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import * as moment from 'jalali-moment';
 import { RegisterService } from '../../_services/register.service';
+declare var require: any
 
 @Component({
-    selector : 'register',
-    templateUrl:'./register.page.html',
-    styleUrls:['register.page.scss']
-    
+    selector: 'course-register',
+    templateUrl: 'course-register.component.html',
+    styleUrls:['./course-register.component.scss']
 })
-export class RegisterPage{
+
+export class RegisterComponent implements OnInit {
     calendarIcon= require("assets/images/calendar-icon.svg");
-    
     user={courseId:'',firstName:'',lastName:'',nationalCode:'',birthDate:'1370-01-01',sex:'',educationField:'',mobilePhone:'',email:'',rulesCheck:false}
-    //banner= require("assets/images/banner.jpg");
-    
-    constructor(private router:ActivatedRoute,private registerService:RegisterService){
-        
-    }
-    ngOnInit() {
-        this.router.params.subscribe((params: Params) => { 
-            this.user.courseId=params.courseId;
-        })
-    }
+    constructor(private registerService:RegisterService) { }
+
+    ngOnInit() { }
     onSubmit(){
         let newDate;
         if(this.user.birthDate && this.user.birthDate!=''){
@@ -35,5 +26,4 @@ export class RegisterPage{
         this.user.birthDate=newDate;
         this.registerService.register(this.user);
     }
-    
 }

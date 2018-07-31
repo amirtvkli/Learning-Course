@@ -9,7 +9,7 @@ styleUrls: ['./nav.component.scss']
 })
 
 export class NavComponent{
-constructor(private auth:AuthService){}
+constructor(protected auth:AuthService){}
     logo= require("assets/images/logo-text.png");
 
     logOut(){

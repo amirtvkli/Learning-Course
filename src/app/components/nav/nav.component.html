@@ -7,19 +7,23 @@
         </a>
       </div>
       <div class="col-3 left">
+        <a id="home-link" routerLink='/' >
+          صفحه اصلی
+        </a>
+        
         <a routerLink='login' *ngIf="!auth.isAuthenticated">
+            <i class="fas fa-sign-in-alt"></i>
+
           ورود
-          <i class="fas fa-sign-in-alt"></i>
         </a>
         <div *ngIf="auth.isAuthenticated">
           <a>خوش آمدید. </a>
           <button class="btn btn-primary" (click)='logOut()' >
-           
             <i class="fas fa-sign-in-alt"></i>
             خروج
-        </button>
+          </button>
         </div>
-       
+        
       </div>
       <div class="col-3 left">
         <span>(۰۳۴) - ۴۲۲ ۳۵ ۱۸۵  :شماره تماس</span>
