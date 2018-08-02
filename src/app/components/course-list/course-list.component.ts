@@ -8,7 +8,7 @@ import { CoursesService } from '../../_services/courses.service';
 })
 
 export class CourseListComponent{
-    constructor(protected courses:CoursesService){
+    constructor(public courses:CoursesService){
         courses.GetCourses();
     }
 }
