@@ -6,12 +6,12 @@
       </div>
       
       <div class="row" style="text-align: justify;">
-        {{currentCourse.description}}
+        {{currentCourse.longDescription}}
       </div>
       <div class="row">
         <h5>محتوای دوره:</h5>
         <ul>
-          <li *ngFor="let item of currentCourse.material">{{item}}</li>
+          <li *ngFor="let item of material">{{item}}</li>
         </ul>
       </div>
       <div class="row">
@@ -26,12 +26,12 @@
     <aside class="col-md-5">
       <img src={{banner}} alt="course" width="100%;" style="margin-bottom:25px;"> 
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">مدرس دوره: {{currentCourse.teacher}}</li>
+        <li class="list-group-item">مدرس دوره: {{currentCourse.teacherName}}</li>
         <li class="list-group-item">هزینه دوره: {{currentCourse.price | price}}</li>
-        <li class="list-group-item">مدت دوره: {{currentCourse.length}} ساعت</li>
-        <li class="list-group-item">زمان برگزاری: {{currentCourse.dates}} </li>
-        <li class="list-group-item">شروع دوره: {{currentCourse.startDate}} </li>
-        <li class="list-group-item">محل برگزاری: {{currentCourse.place}}</li>
+        <li class="list-group-item">مدت دوره: {{currentCourse.duration}} ساعت</li>
+        <li class="list-group-item">زمان برگزاری: {{currentCourse.classTimes}} </li>
+        <li class="list-group-item">شروع دوره: {{currentCourse.eventDate | jalali}} </li>
+        <li class="list-group-item">محل برگزاری: خیابان دهخدا، شرکت کاما</li>
         <li class="list-group-item">ظرفیت باقیمانده: {{currentCourse.capacity | capacity}}</li>
         
       </ul>
