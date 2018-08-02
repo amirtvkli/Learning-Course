@@ -5,6 +5,7 @@ import { AppConfig } from "../_config/app.config";
 import { SnackbarService } from "ngx-snackbar";
 import { of } from 'rxjs/observable/of';
 import { Course,CourseList } from "../_model";
+import { NgxSpinnerService } from "../../../node_modules/ngx-spinner";
 
 @Injectable()
 export class CoursesService{
@@ -15,7 +16,7 @@ export class CoursesService{
   isLoading:boolean=false;
   COURSE_KEY="courseCache";
   courseCache
-  constructor(private http:Http,private snackbar:SnackbarService){}
+  constructor(private http:Http,private snackbar:SnackbarService,private spinner: NgxSpinnerService){}
   CourseCache():Observable<CourseList[]>
   {
     this.courseCache=localStorage.getItem(this.COURSE_KEY);
@@ -28,34 +29,17 @@ export class CoursesService{
   }
   GetCourses()
   {   
-    this.snackbar.add({
-      msg: 'لطفا منتظر بمانید',
-      background: '#00a2ff',
-      color: '#fff',
-      timeout: 5000,
-      action: {
-        text: '',
-        onClick: (snack) => {
-        },
-      },
-      onAdd: (snack) => {
-        console.log('added: ' + snack.id);
-      },
-      onRemove: (snack) => {
-        console.log('removed: ' + snack.id);
-      }
-    });
-    
-    
+    this.spinner.show();
     return this.http.get(AppConfig.BASE_URL + "/registration/getcourses")
     .subscribe( res => {
       this.courseStore = res.json();
       localStorage.setItem(this.COURSE_KEY,JSON.stringify(this.courseStore));
       this.courseSubject.next(this.courseStore);
-      this.snackbar.clear();
+      this.spinner.hide();
     },
     err=>{
       console.error('cant get the course list.')
+      this.spinner.hide();
     });
   }
   

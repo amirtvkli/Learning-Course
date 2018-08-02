@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router, NavigationEnd } from '@angular/router';
 
 @Component({
     selector : 'course',
@@ -9,11 +9,16 @@ import { ActivatedRoute, Params } from '@angular/router';
 })
 export class CoursePage{
     courseId;
-    constructor(private router:ActivatedRoute){
+    constructor(private route:ActivatedRoute,private router:Router){
         
     }
     ngOnInit() {
-        this.router.params.subscribe((params: Params) => { 
+        this.router.events.subscribe((event)=>{
+            if(event instanceof NavigationEnd){
+
+            }
+        });
+        this.route.params.subscribe((params: Params) => { 
             this.courseId=params.courseId;
         })
     }

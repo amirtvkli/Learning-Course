@@ -1,5 +1,5 @@
 <table class="table">
-    <caption>در حال حاضر ثبت نام به صورت حضوری و در محل شرکت آموزشی صنعتی کاما انجام می شود.</caption>
+    <caption>علاوه بر امکان ثبت نام آنلاین، در صورت تمایل به انجام ثبت‌نام حضوری به دفتر شرکت کاما مراجعه نمایید.</caption>
     <thead >
         <tr>
             <th scope="col">ردیف</th>
@@ -8,18 +8,18 @@
             <th scope="col">روز و ساعت</th>
             <th scope="col">مدت(ساعت)</th>
             <th scope="col">ظرفیت باقیمانده (نفر)</th>
-            <th scope="col">مشاهده</th>
+            <th scope="col">ثبت نام</th>
         </tr>
     </thead>
     <tbody *ngIf="courses.courses">
-        <tr *ngFor="let course of courses.courses | async">
+        <tr *ngFor="let course of courses.courses | async" >
             <th scope="row">{{course.id}}</th>
             <td>{{course.title}}</td>
             <td>{{course.eventDate | jalali}}</td>
             <td>{{course.classTimes}} </td>
             <td>{{course.duration}}</td>
             <td>{{course.capacity}}</td>
-            <td><button  [className]="course.capacity>0 ? 'btn btn-primary' : 'btn'" routerLink='/course/{{course.id}}' [disabled]="course.capacity==0">مشاهده</button></td>
+            <td><button  [className]="course.capacity>0 ? 'btn btn-primary' : 'btn'" routerLink='/course/{{course.id}}' [disabled]="course.capacity==0">ثبت‌ نام</button></td>
         </tr>
     </tbody>
 </table>

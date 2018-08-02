@@ -1,0 +1,32 @@
+    <div class="col-md-5 p-lg-5 mx-auto justify-content-center wait container" *ngIf="!result">
+        <div class="display-12 font-weight-normal justify-content-center"> لطفا صبر نمایید.</div>
+    </div>
+    <span *ngIf="result">
+        <div class="col-md-5 p-lg-5 mx-auto my-5 success container" *ngIf="result.status>=100">
+            <div class="display-4 font-weight-normal success"> پرداخت موفق</div>
+            <p class="lead font-weight-normal">{{result.firstName + result.lastName}} عزیز،
+                ثبت‌نام شما با موفقیت انجام شد. 
+            </p>
+            <p class="font-weight-thin">
+                لطفا شماره پیگیری زیر را یادداشت نمایید.
+            </p>
+            <div class="result">
+                <h3>شماره پیگیری:</h3>
+                <h1>{{result.refID}}</h1>
+            </div>
+            <a class="btn  btn-outline-secondary" routerLink="/">بازگشت به صفحه اصلی</a>
+        </div>
+        <div class="col-md-5 p-lg-5 mx-auto my-5 error container" *ngIf="result.status<100">
+            <img src={{icon}} height="100px;">
+            
+            <div class="display-4 font-weight-normal error"> پرداخت ناموفق</div>
+            <p class="lead font-weight-normal">{{result.firstName + result.lastName}} عزیز،
+                ثبت‌نام شما با مشکل مواجه شده است.
+            </p>
+            <p class="font-weight-thin">
+                چنانچه وجه از شما کسر شده، در صورت بازنگشتن وجه تا 48 ساعت با همکاران ما تماس حاصل فرمایید.
+            </p>
+            <a class="btn  btn-outline-secondary" routerLink="/">بازگشت به صفحه اصلی</a>
+        </div>
+    </span>
+    

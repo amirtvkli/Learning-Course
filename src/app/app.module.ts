@@ -9,9 +9,11 @@ import {SnackbarModule} from 'ngx-snackbar';
 
 // Import NgbModule library
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+// Ngx Spinner
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 // Pages
-import {HomePage, CoursePage, RulesPage} from './pages';
+import {HomePage, CoursePage, RulesPage, PaymentPage} from './pages';
 
 // Components
 import { NavComponent, FooterComponent, CourseListComponent, CourseViewComponent, RegisterComponent} from './components';
@@ -30,6 +32,7 @@ import { LoginPage } from './pages/login/login.page';
 import { RegisterService } from './_services/register.service';
 import { CoursesService } from './_services/courses.service';
 import { AuthService } from './_services/auth.service';
+import { PaymentService } from './_services/payment.service';
 
 
 @NgModule({
@@ -52,7 +55,8 @@ import { AuthService } from './_services/auth.service';
     HomePage,
     CoursePage,
     RulesPage,
-    LoginPage
+    LoginPage,
+    PaymentPage
   ],
   imports: [
     HttpModule,
@@ -63,7 +67,8 @@ import { AuthService } from './_services/auth.service';
     // progress bar
     NgProgressModule,
     NgbModule.forRoot(),
-    SnackbarModule.forRoot()
+    SnackbarModule.forRoot(),
+    NgxSpinnerModule
   ],
   providers: [
     //models
@@ -73,6 +78,7 @@ import { AuthService } from './_services/auth.service';
     RegisterService,
     CoursesService,
     AuthService,
+    PaymentService,
 
     // progress bar
     { provide: BrowserXhr, useClass: NgProgressBrowserXhr },

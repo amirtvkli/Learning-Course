@@ -22,7 +22,6 @@ export class RegisterComponent implements OnInit {
             newDate = new Date( moment.from(`${this.user.birthDate['year']}/${this.user.birthDate['month']}/${this.user.birthDate['day']} 16:40`, 'fa', 'YYYY/M/D HH:mm')
             .format('YYYY/M/D HH:mm:ss'));
         }
-        delete this.user.birthDate;
         this.user.birthDate=newDate;
         this.user.courseId=this.courseId;
         this.registerService.register(this.user);
