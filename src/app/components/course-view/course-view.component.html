@@ -16,10 +16,10 @@
       </div>
       <div class="row">
         <span style="margin-top: 30px;">
-      <a href="#divider" style="color:rgb(0, 157, 255); margin-left: 10px;"><strong>برای ثبت‌نام فرم زیر را تکمیل نمایید.</strong></a>
-   |
-      <a routerLink="../.." style="color:rgb(153, 153, 153); margin-right: 10px;"> <strong>بازگشت به صفحه اصلی (لیست همه دوره‌ها)</strong></a>
-    </span>
+          <a href="#divider" style="color:rgb(0, 157, 255); margin-left: 10px;"><strong>برای ثبت‌نام فرم زیر را تکمیل نمایید.</strong></a>
+          |
+          <a routerLink="../.." style="color:rgb(153, 153, 153); margin-right: 10px;"> <strong>بازگشت به صفحه اصلی (لیست همه دوره‌ها)</strong></a>
+        </span>
       </div>
     </div><!-- /.blog-main -->
     
@@ -27,7 +27,18 @@
       <img src={{banner}} alt="course" width="100%;" style="margin-bottom:25px;"> 
       <ul class="list-group list-group-flush">
         <li class="list-group-item">مدرس دوره: {{currentCourse.teacherName}}</li>
-        <li class="list-group-item">هزینه دوره: {{currentCourse.price | price}}</li>
+        <li class="list-group-item">
+          هزینه دوره: 
+          <span style="text-decoration:line-through; ">
+            {{currentCourse.price | price}} 
+          </span>
+          <strong style="color:green; font-size: 14px !important; margin:0px 6px;">
+              {{currentCourse.price-currentCourse.discount | price}} 
+          </strong>
+          <span class="badge badge-success" style="margin-top: 6px; padding:3px !important; font-size: 12px !important;">
+              {{currentCourse.discount | price}} تخفیف (ثبت‌نام اینترنتی)
+            </span>
+        </li>
         <li class="list-group-item">مدت دوره: {{currentCourse.duration}} ساعت</li>
         <li class="list-group-item">زمان برگزاری: {{currentCourse.classTimes}} </li>
         <li class="list-group-item">شروع دوره: {{currentCourse.eventDate | jalali}} </li>
