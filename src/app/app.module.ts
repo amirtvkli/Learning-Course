@@ -33,6 +33,8 @@ import { RegisterService } from './_services/register.service';
 import { CoursesService } from './_services/courses.service';
 import { AuthService } from './_services/auth.service';
 import { PaymentService } from './_services/payment.service';
+import { VersionCheckService } from './_services/version-check.service.ts';
+import { HttpClientModule } from '../../node_modules/@angular/common/http';
 
 
 @NgModule({
@@ -61,6 +63,7 @@ import { PaymentService } from './_services/payment.service';
   ],
   imports: [
     HttpModule,
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
@@ -80,6 +83,7 @@ import { PaymentService } from './_services/payment.service';
     CoursesService,
     AuthService,
     PaymentService,
+    VersionCheckService,
 
     // progress bar
     { provide: BrowserXhr, useClass: NgProgressBrowserXhr },
