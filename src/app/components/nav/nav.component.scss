@@ -1,3 +1,7 @@
+:host{
+    border-bottom:1px grey !important;
+    margin-bottom: 30px;
+}
 a{
     margin: auto 10px;
 }
@@ -11,4 +15,12 @@ a{
 }
 i {
     font-family: "Font Awesome 5 Free" !important;
+}
+.navbar{
+    padding:0.5rem 0rem;
+}
+@media only screen and (max-width: 500px) {
+    .mob-hide{
+        display: none;
+    }
 }

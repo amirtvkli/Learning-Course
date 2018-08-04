@@ -1,25 +1,28 @@
+
+<div style="overflow-x:auto;">
 <table class="table">
     <caption>علاوه بر امکان ثبت نام آنلاین، در صورت تمایل به انجام ثبت‌نام حضوری به دفتر شرکت کاما مراجعه نمایید.</caption>
     <thead >
         <tr>
             <th scope="col">ردیف</th>
             <th scope="col">دوره</th>
-            <th scope="col">تاریخ شروع</th>
-            <th scope="col">روز و ساعت</th>
-            <th scope="col">مدت(ساعت)</th>
-            <th scope="col">ظرفیت دوره (نفر)</th>
+            <th class="mob-hide" scope="col">تاریخ شروع</th>
+            <th class="mob-hide tablet-hide" scope="col">روز و ساعت</th>
+            <th class="mob-hide tablet-hide" scope="col">مدت(ساعت)</th>
+            <th class="mob-hide" scope="col">ظرفیت دوره (نفر)</th>
             <th scope="col">ثبت نام</th>
         </tr>
     </thead>
     <tbody *ngIf="courses.courses">
-        <tr *ngFor="let course of courses.courses | async" >
-            <th *ngIf="course.id<6" scope="row">{{course.id}}</th>
+        <tr scope="row" *ngFor="let course of courses.courses | async" >
+            <th  *ngIf="course.id<6" scope="row">{{course.id}}</th>
             <td *ngIf="course.id<6">{{course.title}}</td>
-            <td *ngIf="course.id<6">{{course.eventDate | jalali}}</td>
-            <td *ngIf="course.id<6">{{course.classTimes}} </td>
-            <td *ngIf="course.id<6">{{course.duration}}</td>
-            <td *ngIf="course.id<6">{{course.capacity}}</td>
+            <td class="mob-hide" *ngIf="course.id<6">{{course.eventDate | jalali}}</td>
+            <td class="mob-hide tablet-hide" *ngIf="course.id<6">{{course.classTimes}} </td>
+            <td class="mob-hide tablet-hide" *ngIf="course.id<6">{{course.duration}}</td>
+            <td class="mob-hide " *ngIf="course.id<6">{{course.capacity}}</td>
             <td *ngIf="course.id<6"><button  [className]="course.capacity>0 ? 'btn btn-primary' : 'btn'" routerLink='/course/{{course.id}}' [disabled]="course.capacity==0">ثبت‌ نام</button></td>
         </tr>
     </tbody>
 </table>
+</div>

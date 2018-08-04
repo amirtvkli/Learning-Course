@@ -1,35 +1,27 @@
-<div class="container">
-  <header class="blog-header py-3">
-    <div class="row flex-nowrap justify-content-between align-items-center">
-      <div class="col-6 d-flex">
-        <a class="image" href="http://ikama.ir">
-          <img src={{logo}} height="40px;">
-        </a>
-      </div>
-      <div class="col-3 left">
-        <a id="home-link" routerLink='/' >
-          صفحه اصلی
-        </a>
-        
-        <a routerLink='login' *ngIf="!auth.isAuthenticated">
-            <i class="fas fa-sign-in-alt"></i>
-
-          ورود
-        </a>
-        <div *ngIf="auth.isAuthenticated">
-          <a>خوش آمدید. </a>
-          <button class="btn btn-primary" (click)='logOut()' >
-            <i class="fas fa-sign-in-alt"></i>
-            خروج
-          </button>
-        </div>
-        
-      </div>
-      <div class="col-3 left">
-        <span>(۰۳۴) - ۴۲۲ ۳۵ ۱۸۵  :شماره تماس</span>
-      </div>
+<div class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand image" href="http://ikama.ir">
+    <img src={{logo}} height="35px;">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav" style="display:flex; flex-flow: row; width: 100%;">
+      <a class="nav-item nav-link" href="#">صفحه اصلی <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="https://ikama.ir/درباره-کاما/">درباره کاما</a>
+      <a class="nav-item nav-link" href="https://ikama.ir/shop/">رویدادهای کاما</a>
+      <a class="nav-item nav-link" href="https://ikama.ir/تماس-با-ما/">تماس با ما</a>
+      <span style="flex: 1 !important"></span>
+      <a class="nav-item nav-link" style="color:dodgerblue !important" routerLink='login' *ngIf="!auth.isAuthenticated">
+        <i class="fas fa-sign-in-alt"></i>
+         به ورود پنل کاربری
+      </a>
+      <a *ngIf="auth.isAuthenticated" class="nav-item nav-link" (click)='logOut()' >
+        <i class="fas fa-sign-in-alt"></i>
+        خروج
+      </a>
+      <a class="nav-item nav-link" style="direction: ltr !important;">(۰۳۴) - ۴۲۲ ۳۵ ۱۸۵ :شماره تماس</a>
     </div>
-  </header>
-  <div class="nav-scroller py-1 mb-2">
   </div>
 </div>
+<hr>

@@ -16,7 +16,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import {HomePage, CoursePage, RulesPage, PaymentPage} from './pages';
 
 // Components
-import { NavComponent, FooterComponent, CourseListComponent, CourseViewComponent, RegisterComponent} from './components';
+import { NavComponent, FooterComponent, CourseListComponent, CourseViewComponent, RegisterComponent, UserConfirmComponent} from './components';
 
 // Routes
 import {AppRouting} from './app.routes';
@@ -50,6 +50,7 @@ import { PaymentService } from './_services/payment.service';
     CourseListComponent,
     CourseViewComponent,
     RegisterComponent,
+    UserConfirmComponent,
     
     //pages
     HomePage,
