@@ -35,7 +35,7 @@ export class RegisterService{
                     background:'#da532c',
                     color: '#ffffff',
                     action: {
-                        text: 'لطفا فرم ثبت نام را با دقت بیشتری کامل نمایید.',
+                        text: '(خطا در ارتباط با درگاه پرداخت بانک)',
                         color: '#ffffff'
                     },
                 });

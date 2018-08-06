@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <p >
+            شما برای  <strong>"{{currentCourse.title}}" </strong> اقدام به ثبت‌نام کرده اید.
+            <br>
+            اطلاعات شما به شرح زیر می‌باشد.
+        </p>
+    </div>
+    <div>
+        <dl class="row">
+            <dt class="col-sm-3">نام و نام خانوادگی</dt>
+            <dd class="col-sm-9">{{(user.sex)?'آقای':'خانم'}} {{user.firstName + ' ' +user.lastName}}</dd>
+            
+            <dt class="col-sm-3">شماره ملی</dt>
+            <dd class="col-sm-9">{{user.nationalCode}}</dd>
+            
+            <dt class="col-sm-3">تاریخ تولد</dt>
+            <dd class="col-sm-9">{{birthDate}}</dd>
+            
+            <dt class="col-sm-3">رشته تحصیلی</dt>
+            <dd class="col-sm-9">{{user.educationField}}</dd>
+            
+            <dt class="col-sm-3">تلفن همراه</dt>
+            <dd class="col-sm-9">{{user.mobilePhone}}</dd>
+            
+            <dt class="col-sm-3">رایانامه</dt>
+            <dd class="col-sm-9">{{user.email}}</dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-3">هزینه قابل پرداخت</dt>
+            <dd class="col-sm-9">
+                <span style="text-decoration:line-through; ">
+                    {{currentCourse.price | price}} 
+                </span>
+                <strong style="color:green; font-size: 14px !important; margin:0px 6px;">
+                    {{currentCourse.price-currentCourse.discount | price}} 
+                </strong>
+                <span class="badge badge-success" style="margin-top: 6px; padding:3px !important; font-size: 12px !important;">
+                    {{currentCourse.discount | price}} تخفیف (ثبت‌نام اینترنتی)
+                </span>
+            </dd>
+        </dl>
+        <div class="row">
+            <form class="form-inline" (submit)="onDiscount()">
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="inputPassword2" class="sr-only">کد تخفیف</label>
+                    <input type="text" class="form-control" id="inputPassword2" placeholder="کد تخفیف را وارد نمائید.">
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">اعمال تخفیف</button>
+            </form>
+        </div>
+        <div class="row" style="margin-top: 30px;">
+            <p>چنانچه از صحت اطلاعات فوق اطمینان دارید، بر روی دکمه "تایید و پرداخت" کلیک نمایید تا برای نهایی کردن ثبت نام به صفحه پرداخت بانک هدایت شوید؛ <span style="color:gray;">در غیر این صورت برای ویرایش اطلاعات خود بر روی دکمه "بازگشت" کلیک نمائید.</span></p>
+        </div>
+        <div class="row">
+            <button class="btn btn-success margin" (click)="onSubmit()"> تایید و پرداخت</button>
+            <button class="btn margin" (click)="onReturn()" >بازگشت</button>
+        </div>
+    </div>

@@ -38,8 +38,14 @@ export class CoursesService{
       this.spinner.hide();
     },
     err=>{
-      console.error('cant get the course list.')
       this.spinner.hide();
+      this.snackbar.add({msg:'لطفا فیلترشکن خود را غیرفعال کنید.',
+      background: '#da532c',
+      color: '#fff',
+      action: {
+        text: '',
+        color: '#fff'
+      },});
     });
   }
   

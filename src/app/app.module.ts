@@ -13,10 +13,10 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
 // Pages
-import {HomePage, CoursePage, RulesPage, PaymentPage} from './pages';
+import {HomePage, CoursePage, RulesPage, PaymentPage,UserConfirmPage} from './pages';
 
 // Components
-import { NavComponent, FooterComponent, CourseListComponent, CourseViewComponent, RegisterComponent, UserConfirmComponent} from './components';
+import { NavComponent, FooterComponent, CourseListComponent, CourseViewComponent, RegisterComponent} from './components';
 
 // Routes
 import {AppRouting} from './app.routes';
@@ -52,14 +52,15 @@ import { HttpClientModule } from '../../node_modules/@angular/common/http';
     CourseListComponent,
     CourseViewComponent,
     RegisterComponent,
-    UserConfirmComponent,
+    
     
     //pages
     HomePage,
     CoursePage,
     RulesPage,
     LoginPage,
-    PaymentPage
+    PaymentPage,
+    UserConfirmPage
   ],
   imports: [
     HttpModule,
