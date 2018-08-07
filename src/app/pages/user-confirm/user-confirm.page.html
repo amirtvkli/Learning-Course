@@ -27,29 +27,45 @@
             <dd class="col-sm-9">{{user.email}}</dd>
         </dl>
         <dl class="row">
-            <dt class="col-sm-3">هزینه قابل پرداخت</dt>
-            <dd class="col-sm-9">
+            <dt class="col-sm-3">مبلغ قابل پرداخت</dt>
+            <dd *ngIf="!(discount.value>0)" class="col-sm-9">
                 <span style="text-decoration:line-through; ">
                     {{currentCourse.price | price}} 
                 </span>
                 <strong style="color:green; font-size: 14px !important; margin:0px 6px;">
                     {{currentCourse.price-currentCourse.discount | price}} 
                 </strong>
-                <span class="badge badge-success" style="margin-top: 6px; padding:3px !important; font-size: 12px !important;">
+                <span class="alert alert-success fade show" style="margin-top: 6px; padding:3px !important; font-size: 12px !important;">
                     {{currentCourse.discount | price}} تخفیف (ثبت‌نام اینترنتی)
                 </span>
             </dd>
+            <dd *ngIf="discount.value>0" class="col-sm-9">
+                <span style="text-decoration:line-through; ">
+                    {{currentCourse.price | price}} 
+                </span>
+                <strong style="color:dodgerblue; font-size: 14px !important; margin:0px 6px;">
+                    {{currentCourse.price*(100-discount.value)/100 | price}} 
+                </strong>
+                <span class="alert alert-primary fade show" style="margin-top: 6px; padding:3px !important; font-size: 12px !important;">
+                    {{currentCourse.price*(discount.value)/100 | price}} تخفیف <a class="alert-link">(کد تخفیف)</a>
+                </span>
+            </dd>
         </dl>
-        <div class="row">
-            <form class="form-inline" (submit)="onDiscount()">
-                <div class="form-group mx-sm-3 mb-2">
-                    <label for="inputPassword2" class="sr-only">کد تخفیف</label>
-                    <input type="text" class="form-control" id="inputPassword2" placeholder="کد تخفیف را وارد نمائید.">
+        <div class="row" [hidden]="discount.value>0" style="color:grey; margin-top:30px; ">
+            <p style="padding-top:5px; ">در صورت داشتن کد تخفیف، آن را وارد نمائید:</p>
+            <form #form="ngForm"  class="form-inline" [ngClass]="{'needs-validation':!submitted,'was-validated':submitted}" (submit)="onDiscount(form)">
+                <div class="form-row">
+                    <div class="col-md-5 mx-sm-4 mb-2">
+                        <input type="text" id="validationTooltip" class="form-control invalid" minlength="8" maxlength="8"  [(ngModel)]="discount.code" name="discountCode" #discountCode="ngModel" placeholder="کد تخفیف را وارد نمائید." aria-describedby="validationTooltipPrepend" required>
+                        <div class="invalid-tooltip" [hidden]="discountCode.valid">
+                            کد وارد شده صحیح نمی‌باشد.
+                        </div>
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-primary mb-2">اعمال تخفیف</button>
             </form>
         </div>
-        <div class="row" style="margin-top: 30px;">
+        <div class="row" style="margin-top: 20px;">
             <p>چنانچه از صحت اطلاعات فوق اطمینان دارید، بر روی دکمه "تایید و پرداخت" کلیک نمایید تا برای نهایی کردن ثبت نام به صفحه پرداخت بانک هدایت شوید؛ <span style="color:gray;">در غیر این صورت برای ویرایش اطلاعات خود بر روی دکمه "بازگشت" کلیک نمائید.</span></p>
         </div>
         <div class="row">

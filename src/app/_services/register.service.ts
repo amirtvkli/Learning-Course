@@ -3,6 +3,7 @@ import {Http} from '@angular/http';
 import {AppConfig} from '../_config/app.config';
 import { NgxSpinnerService } from "../../../node_modules/ngx-spinner";
 import { SnackbarService } from "../../../node_modules/ngx-snackbar";
+import * as moment from 'jalali-moment';
 
 @Injectable()
 
@@ -10,6 +11,12 @@ export class RegisterService{
     constructor(private http: Http,private spinner:NgxSpinnerService,private snackbar:SnackbarService){}
     result;
     register(user){
+        let newDate;
+        if(user.birthDate){
+            newDate = new Date( moment.from(`${user.birthDate['year']}/${user.birthDate['month']}/${user.birthDate['day']} 16:40`, 'fa', 'YYYY/M/D HH:mm')
+            .format('YYYY/M/D HH:mm:ss'));
+        }
+        user.birthDate=newDate;
         delete user.rulesCheck;
         try {
             this.spinner.show();

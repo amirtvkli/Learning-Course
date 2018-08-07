@@ -13,11 +13,6 @@ export class CoursePage{
         
     }
     ngOnInit() {
-        this.router.events.subscribe((event)=>{
-            if(event instanceof NavigationEnd){
-
-            }
-        });
         this.route.params.subscribe((params: Params) => { 
             this.courseId=params.courseId;
         })

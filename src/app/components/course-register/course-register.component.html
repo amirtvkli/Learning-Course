@@ -28,7 +28,7 @@
             <div class="col-md-6">
                 <label for="birthDate">تاریخ تولد</label>
                 <div class="ui icon input">
-                    <input type="text" name="birthDate" (focus)="d.toggle()" (click)="d.open()" id="birthDate" [(ngModel)]="user.birthDate" #birthDate="ngModel" class="form-control" placeholder="تاریخ تولد خود را وارد کنید." [firstDayOfWeek]="6"   [minDate]="{year: 1358, month: 1}"   ngbDatepicker #d="ngbDatepicker" required maxlength="10">
+                    <input type="text" name="birthDate" (focus)="d.toggle()" (click)="d.open()" id="birthDate" [(ngModel)]="user.birthDate"  #birthDate="ngModel" class="form-control" placeholder="تاریخ تولد خود را وارد کنید." [firstDayOfWeek]="6"   [minDate]="{year: 1358, month: 1}"   ngbDatepicker #d="ngbDatepicker" required>
                     <img class="icon"  src={{calendarIcon}} style="width: 1.2rem; height: 1rem; "/>
                 </div>
                 <div [hidden]="birthDate.valid || !birthDate.touched" class="invalid">

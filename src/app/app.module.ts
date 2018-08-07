@@ -35,6 +35,7 @@ import { AuthService } from './_services/auth.service';
 import { PaymentService } from './_services/payment.service';
 import { VersionCheckService } from './_services/version-check.service.ts';
 import { HttpClientModule } from '../../node_modules/@angular/common/http';
+import { DiscountService } from './_services/discount.service';
 
 
 @NgModule({
@@ -85,7 +86,8 @@ import { HttpClientModule } from '../../node_modules/@angular/common/http';
     AuthService,
     PaymentService,
     VersionCheckService,
-
+    DiscountService,
+    
     // progress bar
     { provide: BrowserXhr, useClass: NgProgressBrowserXhr },
     { provide: LocationStrategy, useClass: HashLocationStrategy }

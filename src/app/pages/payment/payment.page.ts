@@ -42,6 +42,7 @@ export class PaymentPage implements OnInit {
                     },
                     });
                 }
+                ,()=>{}
             )
         }
     }
